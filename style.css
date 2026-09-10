@@ -101,35 +101,37 @@ body {
 /* Language Switcher */
 .language-switcher {
     display: flex;
-    gap: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 3px;
-    border-radius: 20px;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 5px 9px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
     backdrop-filter: blur(10px);
     flex-shrink: 0;
 }
 
-.lang-btn {
-    padding: 6px 12px;
-    border: none;
+.language-label {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.language-select {
+    border: 0;
+    outline: 0;
     background: transparent;
-    color: var(--white);
-    cursor: pointer;
-    border-radius: 15px;
+    color: #fff;
+    font: inherit;
     font-size: 12px;
-    font-weight: 500;
-    transition: var(--transition);
-    min-width: 40px;
-}
-
-.lang-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.lang-btn.active {
-    background: var(--white);
-    color: var(--dark-red);
     font-weight: 600;
+    cursor: pointer;
+    max-width: 128px;
+}
+
+.language-select option {
+    color: var(--dark-gray);
+    background: #fff;
 }
 
 /* Category Navigation */
@@ -183,6 +185,19 @@ body {
     min-height: calc(100vh - 200px);
 }
 
+.table-context {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 10px 15px;
+    border: 1px solid rgba(139, 0, 0, 0.16);
+    border-radius: 999px;
+    background: #fff8f5;
+    color: var(--dark-red);
+    font-size: 13px;
+    font-weight: 600;
+}
+
 /* Menu Section */
 .menu-section {
     margin-bottom: 40px;
@@ -220,9 +235,13 @@ body {
     background: var(--crimson);
 }
 
-.section-icon {
-    font-size: 32px;
+.section-image {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    border-radius: 16px;
     flex-shrink: 0;
+    box-shadow: 0 5px 14px rgba(139, 0, 0, 0.16);
 }
 
 .section-title {
@@ -299,9 +318,24 @@ body {
     gap: 8px;
 }
 
-.item-icon {
-    font-size: 20px;
-    flex-shrink: 0;
+.item-image {
+    width: 74px;
+    height: 74px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex: 0 0 74px;
+    background: #eee;
+}
+
+.item-copy {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-title {
+    line-height: 1.25;
 }
 
 .item-description {
@@ -520,6 +554,17 @@ body {
     font-weight: 600;
     font-size: 15px;
     color: var(--dark-gray);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-item-image {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex: 0 0 42px;
 }
 
 .cart-item-price {
@@ -609,6 +654,25 @@ body {
     background: #666;
 }
 
+.waiter-ready-btn {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 10px;
+    background: var(--dark-red);
+    color: #fff;
+    border: 0;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.waiter-ready-btn:hover {
+    background: var(--dark-red-hover);
+    transform: translateY(-1px);
+}
+
 /* Footer */
 .footer {
     background: var(--dark-gray);
@@ -648,6 +712,16 @@ body {
     font-size: 11px;
     color: var(--light-gray);
     margin-top: 10px;
+}
+
+.footer-copyright a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,.45);
+}
+
+.footer-copyright a:hover {
+    border-bottom-color: #fff;
 }
 
 /* Tablet Styles */
@@ -702,14 +776,13 @@ body {
     }
     
     .language-switcher {
-        gap: 3px;
-        padding: 2px;
+        gap: 4px;
+        padding: 4px 6px;
     }
-    
-    .lang-btn {
-        padding: 5px 8px;
+
+    .language-select {
+        max-width: 86px;
         font-size: 10px;
-        min-width: 32px;
     }
     
     .category-btn {
@@ -725,8 +798,9 @@ body {
         margin-bottom: 20px;
     }
     
-    .section-icon {
-        font-size: 24px;
+    .section-image {
+        width: 48px;
+        height: 48px;
     }
     
     .section-title {
@@ -744,6 +818,12 @@ body {
     
     .item-name {
         font-size: 14px;
+    }
+
+    .item-image {
+        width: 62px;
+        height: 62px;
+        flex-basis: 62px;
     }
     
     .item-description {

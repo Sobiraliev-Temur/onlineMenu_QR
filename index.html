@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="theme-color" content="#2C2C2C">
-    <title>SHASHLIK.UZ - Меню</title>
+    <meta name="theme-color" content="#8B0000">
+    <meta name="description" content="SHASHLIK.UZ digital QR-menu with photos, languages and a waiter-ready basket.">
+    <title>SHASHLIK.UZ · Digital menyu</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -23,11 +24,21 @@
                     </div>
                     
                     <!-- Language Switcher -->
-                    <div class="language-switcher">
-                        <button class="lang-btn active" data-lang="ru">RU</button>
-                        <button class="lang-btn" data-lang="uz">UZ</button>
-                        <button class="lang-btn" data-lang="en">EN</button>
-                    </div>
+                    <label class="language-switcher" for="languageSelect">
+                        <span class="language-label" aria-hidden="true">◎</span>
+                        <select id="languageSelect" aria-label="Choose language">
+                            <option value="uz">O‘zbekcha</option>
+                            <option value="ru">Русский</option>
+                            <option value="tg">Тоҷикӣ</option>
+                            <option value="kk">Қазақша</option>
+                            <option value="ky">Кыргызча</option>
+                            <option value="en">English</option>
+                            <option value="zh">简体中文</option>
+                            <option value="tr">Türkçe</option>
+                            <option value="ko">한국어</option>
+                            <option value="hi">हिन्दी</option>
+                        </select>
+                    </label>
                 </div>
             </div>
         </div>
@@ -45,6 +56,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
+            <div class="table-context" id="tableContext" role="status"></div>
             <div id="menuContent">
                 <!-- Will be populated by JS -->
             </div>
@@ -75,6 +87,7 @@
                 <div class="cart-service-note">
                     * Процент за обслуживание не включён
                 </div>
+                <button class="waiter-ready-btn" id="waiterReadyBtn">Показать официанту</button>
                 <button class="cart-clear-btn" id="cartClearBtn">Очистить корзину</button>
             </div>
         </div>
@@ -91,7 +104,7 @@
                     <span>🕐 10:00 - 23:00</span>
                 </div>
                 <div class="footer-copyright">
-                    © 2024 SHASHLIK.UZ
+                    © 2026 SHASHLIK.UZ · <a href="https://sobira.uz/" target="_blank" rel="noopener">Webbplats skapad av SOBIRA</a>
                 </div>
             </div>
         </div>

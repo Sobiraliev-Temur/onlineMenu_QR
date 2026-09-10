@@ -220,56 +220,72 @@ const menuData = {
     ]
 };
 
-// Переводы для интерфейса
+// Интерфейс поддерживает языки, которые чаще всего нужны гостям Самарканда.
+// Названия блюд сохраняются в оригинале, а при отсутствии отдельного перевода
+// используется понятная английская/русская подпись вместе с фотографией.
 const translations = {
-    ru: {
-        subtitle: 'Премиум Гриль и Барбекю',
-        address: 'Ташкент, Узбекистан',
-        phone: '(66) 232 00 00',
-        hours: '10:00 - 23:00',
-        currency: 'сум',
-        byRequest: 'По запросу',
-        allCategories: 'Все',
-        cart: 'Корзина',
-        emptyCart: 'Корзина пуста',
-        total: 'Итого:',
-        serviceNote: '* Процент за обслуживание не включён',
-        clearCart: 'Очистить корзину'
-    },
-    uz: {
-        subtitle: 'Premium Gril va Barbekyu',
-        address: 'Toshkent, O\'zbekiston',
-        phone: '(66) 232 00 00',
-        hours: '10:00 - 23:00',
-        currency: 'so\'m',
-        byRequest: 'So\'rov bo\'yicha',
-        allCategories: 'Barchasi',
-        cart: 'Savat',
-        emptyCart: 'Savat bo\'sh',
-        total: 'Jami:',
-        serviceNote: '* Xizmat foizi kiritilmagan',
-        clearCart: 'Savatni tozalash'
-    },
-    en: {
-        subtitle: 'Premium Grill & BBQ',
-        address: 'Tashkent, Uzbekistan',
-        phone: '(66) 232 00 00',
-        hours: '10:00 - 23:00',
-        currency: 'sum',
-        byRequest: 'On request',
-        allCategories: 'All',
-        cart: 'Cart',
-        emptyCart: 'Cart is empty',
-        total: 'Total:',
-        serviceNote: '* Service fee not included',
-        clearCart: 'Clear cart'
-    }
+    uz: { subtitle: 'Premium Gril va Barbekyu', address: 'Toshkent, O\'zbekiston', phone: '(66) 232 00 00', hours: '10:00 - 23:00', currency: 'so\'m', byRequest: 'So\'rov bo\'yicha', allCategories: 'Barchasi', cart: 'Savat', emptyCart: 'Savat bo\'sh', total: 'Jami:', serviceNote: 'Xizmat haqi kiritilmagan', clearCart: 'Savatni tozalash', showToWaiter: 'Ofitsiantga ko\'rsatish', table: 'Stol', tableHint: 'QR menyu · tanlovlaringizni savatga qo\'shing', ready: 'Buyurtma ofitsiantga ko\'rsatishga tayyor', share: 'Ulashish', copied: 'Buyurtma nusxalandi' },
+    ru: { subtitle: 'Премиум гриль и барбекю', address: 'Ташкент, Узбекистан', phone: '(66) 232 00 00', hours: '10:00 - 23:00', currency: 'сум', byRequest: 'По запросу', allCategories: 'Все', cart: 'Корзина', emptyCart: 'Корзина пуста', total: 'Итого:', serviceNote: 'Сервисный сбор не включён', clearCart: 'Очистить корзину', showToWaiter: 'Показать официанту', table: 'Стол', tableHint: 'QR-меню · добавляйте блюда в корзину', ready: 'Заказ готов к показу официанту', share: 'Поделиться', copied: 'Заказ скопирован' },
+    tg: { subtitle: 'Грилл ва барбекю', address: 'Тошканд, Ӯзбекистон', phone: '(66) 232 00 00', hours: '10:00 - 23:00', currency: 'сӯм', byRequest: 'Бо дархост', allCategories: 'Ҳама', cart: 'Сабад', emptyCart: 'Сабад холӣ аст', total: 'Ҳамагӣ:', serviceNote: 'Ҳаққи хизмат дохил нест', clearCart: 'Холӣ кардани сабад', showToWaiter: 'Ба пешхизмат нишон додан', table: 'Миз', tableHint: 'Менюи QR · таомҳоро ба сабад илова кунед', ready: 'Фармоиш барои пешхизмат омода аст', share: 'Мубодила', copied: 'Фармоиш нусха шуд' },
+    kk: { subtitle: 'Премиум гриль және барбекю', address: 'Ташкент, Өзбекстан', phone: '(66) 232 00 00', hours: '10:00 - 23:00', currency: 'сум', byRequest: 'Сұраныс бойынша', allCategories: 'Барлығы', cart: 'Себет', emptyCart: 'Себет бос', total: 'Барлығы:', serviceNote: 'Қызмет ақысы кірмеген', clearCart: 'Себетті тазалау', showToWaiter: 'Даяшыға көрсету', table: 'Үстел', tableHint: 'QR мәзір · таңдауыңызды себетке қосыңыз', ready: 'Тапсырыс даяшыға көрсетуге дайын', share: 'Бөлісу', copied: 'Тапсырыс көшірілді' },
+    ky: { subtitle: 'Премиум гриль жана барбекю', address: 'Ташкент, Өзбекстан', phone: '(66) 232 00 00', hours: '10:00 - 23:00', currency: 'сум', byRequest: 'Суроо боюнча', allCategories: 'Баары', cart: 'Себет', emptyCart: 'Себет бош', total: 'Жалпы:', serviceNote: 'Кызмат акысы кирген эмес', clearCart: 'Себетти тазалоо', showToWaiter: 'Официантка көрсөтүү', table: 'Стол', tableHint: 'QR меню · тандоолорду себетке кошуңуз', ready: 'Буйрутма официантка көрсөтүүгө даяр', share: 'Бөлүшүү', copied: 'Буйрутма көчүрүлдү' },
+    en: { subtitle: 'Premium Grill & BBQ', address: 'Tashkent, Uzbekistan', phone: '(66) 232 00 00', hours: '10:00 - 23:00', currency: 'sum', byRequest: 'On request', allCategories: 'All', cart: 'Basket', emptyCart: 'Your basket is empty', total: 'Total:', serviceNote: 'Service fee not included', clearCart: 'Clear basket', showToWaiter: 'Show to waiter', table: 'Table', tableHint: 'QR menu · add your choices to the basket', ready: 'Order ready to show the waiter', share: 'Share', copied: 'Order copied' },
+    zh: { subtitle: '高级烧烤与烤肉', address: '乌兹别克斯坦·塔什干', phone: '(66) 232 00 00', hours: '10:00 - 23:00', currency: '苏姆', byRequest: '按需提供', allCategories: '全部', cart: '购物篮', emptyCart: '购物篮为空', total: '合计：', serviceNote: '不含服务费', clearCart: '清空购物篮', showToWaiter: '向服务员展示', table: '桌号', tableHint: '二维码菜单 · 将菜品加入购物篮', ready: '订单已准备好，可向服务员展示', share: '分享', copied: '订单已复制' },
+    tr: { subtitle: 'Premium Izgara ve Barbekü', address: 'Taşkent, Özbekistan', phone: '(66) 232 00 00', hours: '10:00 - 23:00', currency: 'sum', byRequest: 'İstek üzerine', allCategories: 'Tümü', cart: 'Sepet', emptyCart: 'Sepet boş', total: 'Toplam:', serviceNote: 'Servis ücreti dahil değildir', clearCart: 'Sepeti temizle', showToWaiter: 'Garsona göster', table: 'Masa', tableHint: 'QR menü · seçimlerinizi sepete ekleyin', ready: 'Sipariş garsona gösterilmeye hazır', share: 'Paylaş', copied: 'Sipariş kopyalandı' },
+    ko: { subtitle: '프리미엄 그릴 & 바비큐', address: '우즈베키스탄 타슈켄트', phone: '(66) 232 00 00', hours: '10:00 - 23:00', currency: '숨', byRequest: '문의 필요', allCategories: '전체', cart: '장바구니', emptyCart: '장바구니가 비어 있습니다', total: '합계:', serviceNote: '서비스 요금 별도', clearCart: '장바구니 비우기', showToWaiter: '직원에게 보여주기', table: '테이블', tableHint: 'QR 메뉴 · 메뉴를 장바구니에 담으세요', ready: '직원에게 보여줄 주문이 준비되었습니다', share: '공유', copied: '주문이 복사되었습니다' },
+    hi: { subtitle: 'प्रीमियम ग्रिल और बारबेक्यू', address: 'ताशकंद, उज़्बेकिस्तान', phone: '(66) 232 00 00', hours: '10:00 - 23:00', currency: 'सुम', byRequest: 'अनुरोध पर', allCategories: 'सभी', cart: 'कार्ट', emptyCart: 'कार्ट खाली है', total: 'कुल:', serviceNote: 'सेवा शुल्क शामिल नहीं', clearCart: 'कार्ट साफ़ करें', showToWaiter: 'वेटर को दिखाएँ', table: 'टेबल', tableHint: 'QR मेन्यू · पसंदीदा व्यंजन कार्ट में जोड़ें', ready: 'वेटर को दिखाने के लिए ऑर्डर तैयार है', share: 'शेयर', copied: 'ऑर्डर कॉपी हो गया' }
 };
 
+const categoryImages = {
+    appetizers: 'https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=160&q=80',
+    soups: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=160&q=80',
+    salads: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=160&q=80',
+    'main-dishes': 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=160&q=80',
+    shashlik: 'https://images.unsplash.com/photo-1529692236671-f1dcf775cd77?auto=format&fit=crop&w=160&q=80',
+    drinks: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=160&q=80',
+    sauces: 'https://images.unsplash.com/photo-1472476442910-7a43b7e9e6b0?auto=format&fit=crop&w=160&q=80',
+    desserts: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=160&q=80'
+};
+
+const itemImages = {
+    'jiz-biz-lamb': 'https://shashlik.uz/storage/menu-items/6916ff9a212c5052242117-4.jpg',
+    'jiz-biz-beef': 'https://shashlik.uz/storage/menu-items/6916fd7491abc444042862-4.jpg',
+    'chicken-cutlets': 'https://shashlik.uz/storage/menu-items/6916ffef31f88712289299-4.jpg',
+    'beef-tenderloin': 'https://shashlik.uz/storage/menu-items/691700248b907345360107-4.jpg',
+    'lamb-loin': 'https://shashlik.uz/storage/menu-items/69170058dfb92667823672-4.jpg',
+    'lamb-ribs': 'https://shashlik.uz/storage/menu-items/6917017830b5b959765136-4.jpg',
+    samsa: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=240&q=82',
+    manti: 'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=240&q=82',
+    chicken: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=240&q=82',
+    'ribeye-steak': 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=240&q=82',
+    'set-4': 'https://images.unsplash.com/photo-1529692236671-f1dcf775cd77?auto=format&fit=crop&w=240&q=82',
+    'set-6': 'https://images.unsplash.com/photo-1529692236671-f1dcf775cd77?auto=format&fit=crop&w=240&q=82',
+    'set-8': 'https://images.unsplash.com/photo-1529692236671-f1dcf775cd77?auto=format&fit=crop&w=240&q=82',
+    'grilled-vegetables': 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=240&q=82',
+    ayran: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=240&q=82',
+    'fruit-plate': 'https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=240&q=82'
+};
+
+function localized(value, lang = currentLang) {
+    if (!value) return '';
+    if (typeof value === 'string') return value;
+    return value[lang] || value.en || value.ru || value.uz || Object.values(value)[0] || '';
+}
+
+function escapeHtml(value = '') {
+    return String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
+}
+
+function getItemImage(item, categoryId = '') {
+    return itemImages[item.id] || categoryImages[categoryId] || categoryImages.shashlik;
+}
+
 // Состояние приложения
-let currentLang = 'ru';
+const requestedLanguage = new URLSearchParams(window.location.search).get('lang');
+let currentLang = translations[requestedLanguage] ? requestedLanguage : (localStorage.getItem('shashlik_lang') || 'uz');
 let currentCategory = 'all';
 let cart = JSON.parse(localStorage.getItem('shashlik_cart')) || {};
+const tableNumber = new URLSearchParams(window.location.search).get('table');
 
 // Форматирование цены
 function formatPrice(price, lang) {
@@ -282,6 +298,40 @@ function formatPrice(price, lang) {
 // Сохранение корзины в localStorage
 function saveCart() {
     localStorage.setItem('shashlik_cart', JSON.stringify(cart));
+}
+
+function getTableContext() {
+    const suffix = tableNumber ? ` · ${translations[currentLang].table} ${tableNumber}` : '';
+    return `${translations[currentLang].tableHint}${suffix}`;
+}
+
+function updateTableContext() {
+    const context = document.getElementById('tableContext');
+    if (context) context.textContent = getTableContext();
+}
+
+function getOrderText() {
+    const lines = Object.entries(cart).map(([itemId, qty]) => {
+        const item = findItemById(itemId);
+        return item ? `${qty} × ${localized(item.name)}` : '';
+    }).filter(Boolean);
+    const table = tableNumber ? ` · ${translations[currentLang].table} ${tableNumber}` : '';
+    return `SHASHLIK.UZ${table}\n${lines.join('\n')}\n${translations[currentLang].total} ${formatPrice(getCartTotal(), currentLang)}`;
+}
+
+async function showOrderToWaiter() {
+    if (getCartCount() === 0) return;
+    const orderText = getOrderText();
+    if (navigator.share) {
+        try { await navigator.share({ title: translations[currentLang].cart, text: orderText }); } catch (error) { /* user closed share sheet */ }
+    } else if (navigator.clipboard) {
+        try {
+            await navigator.clipboard.writeText(orderText);
+            window.alert(translations[currentLang].copied);
+        } catch (error) { window.alert(translations[currentLang].ready); }
+    } else {
+        window.alert(`${translations[currentLang].ready}\n\n${orderText}`);
+    }
 }
 
 // Получение количества товаров в корзине
@@ -308,6 +358,11 @@ function findItemById(itemId) {
         if (item) return item;
     }
     return null;
+}
+
+function findCategoryIdByItemId(itemId) {
+    const category = menuData.categories.find(cat => cat.items.some(item => item.id === itemId));
+    return category ? category.id : '';
 }
 
 // Обновление бейджа корзины
@@ -377,7 +432,7 @@ function renderCartModal() {
         html += `
             <div class="cart-item">
                 <div class="cart-item-info">
-                    <div class="cart-item-name">${item.icon} ${item.name[currentLang]}</div>
+                    <div class="cart-item-name"><img class="cart-item-image" src="${getItemImage(item, findCategoryIdByItemId(item.id))}" alt="" loading="lazy"> ${localized(item.name)}</div>
                     <div class="cart-item-price">${price > 0 ? formatPrice(price, currentLang) : translations[currentLang].byRequest} × ${qty} = ${price > 0 ? formatPrice(itemTotal, currentLang) : '—'}</div>
                 </div>
                 <div class="cart-item-controls">
@@ -403,7 +458,7 @@ function initCategories() {
     const allCats = [...allCategories, ...menuData.categories.map(cat => ({
         id: cat.id,
         icon: cat.icon,
-        name: cat.name[currentLang]
+        name: localized(cat.name)
     }))];
     
     categoryList.innerHTML = allCats.map(cat => `
@@ -442,12 +497,12 @@ function renderMenu() {
         html += `
             <section class="menu-section" id="section-${category.id}">
                 <div class="section-header">
-                    <span class="section-icon">${category.icon}</span>
-                    <h2 class="section-title">${category.name[currentLang]}</h2>
-                    ${category.time ? `<span class="section-time">⏱ ${category.time[currentLang]}</span>` : ''}
+                    <img class="section-image" src="${categoryImages[category.id] || categoryImages.shashlik}" alt="" loading="lazy">
+                    <h2 class="section-title">${localized(category.name)}</h2>
+                    ${category.time ? `<span class="section-time">⏱ ${localized(category.time)}</span>` : ''}
                 </div>
                 <div class="menu-items">
-                    ${category.items.map(item => renderMenuItem(item)).join('')}
+                    ${category.items.map(item => renderMenuItem(item, category.id)).join('')}
                 </div>
             </section>
         `;
@@ -466,7 +521,7 @@ function renderMenu() {
 }
 
 // Рендеринг отдельного блюда
-function renderMenuItem(item) {
+function renderMenuItem(item, categoryId) {
     const priceHtml = item.price !== null 
         ? `<div class="item-price">
             <span>${formatPrice(item.price, currentLang)}</span>
@@ -480,10 +535,10 @@ function renderMenuItem(item) {
         <div class="menu-item">
             <div class="item-info">
                 <div class="item-name">
-                    <span class="item-icon">${item.icon || '🍽️'}</span>
-                    ${item.name[currentLang]}
+                    <img class="item-image" src="${getItemImage(item, categoryId)}" alt="${escapeHtml(localized(item.name))}" loading="lazy">
+                    <span class="item-copy"><span class="item-title">${localized(item.name)}</span>
+                    ${item.description ? `<span class="item-description">${localized(item.description)}</span>` : ''}</span>
                 </div>
-                ${item.description ? `<div class="item-description">${item.description[currentLang]}</div>` : ''}
             </div>
             <div style="display: flex; align-items: center;">
                 ${priceHtml}
@@ -495,7 +550,10 @@ function renderMenuItem(item) {
 
 // Обновление языка
 function updateLanguage(lang) {
+    if (!translations[lang]) lang = 'uz';
     currentLang = lang;
+    localStorage.setItem('shashlik_lang', lang);
+    document.documentElement.lang = lang;
     
     document.querySelector('.logo-subtitle').textContent = translations[lang].subtitle;
     
@@ -505,25 +563,25 @@ function updateLanguage(lang) {
         if (index === 2) span.textContent = `🕐 ${translations[lang].hours}`;
     });
     
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
+    const languageSelect = document.getElementById('languageSelect');
+    if (languageSelect) languageSelect.value = lang;
     
     // Обновляем тексты в корзине
     document.querySelector('.cart-modal-title').textContent = translations[lang].cart;
     document.querySelector('.cart-service-note').textContent = translations[lang].serviceNote;
     document.querySelector('.cart-clear-btn').textContent = translations[lang].clearCart;
+    document.querySelector('.cart-total > span:first-child').textContent = translations[lang].total;
+    document.getElementById('waiterReadyBtn').textContent = translations[lang].showToWaiter;
+    updateTableContext();
     
     initCategories();
     renderMenu();
     renderCartModal();
 }
 
-// Обработчики языка
-document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        updateLanguage(btn.dataset.lang);
-    });
+// Обработчик выбора языка
+document.getElementById('languageSelect').addEventListener('change', (event) => {
+    updateLanguage(event.target.value);
 });
 
 // Обработчики корзины
@@ -546,14 +604,15 @@ document.getElementById('cartClearBtn').addEventListener('click', () => {
     clearCart();
 });
 
+document.getElementById('waiterReadyBtn').addEventListener('click', showOrderToWaiter);
+
 // Инициализация при загрузке
 document.addEventListener('DOMContentLoaded', () => {
     initCategories();
     renderMenu();
     updateCartBadge();
+    updateLanguage(currentLang);
     
     // Установка начальных текстов корзины
-    document.querySelector('.cart-modal-title').textContent = translations[currentLang].cart;
-    document.querySelector('.cart-service-note').textContent = translations[currentLang].serviceNote;
-    document.querySelector('.cart-clear-btn').textContent = translations[currentLang].clearCart;
+    updateTableContext();
 });
