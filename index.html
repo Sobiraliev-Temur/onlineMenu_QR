@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#2C2C2C">
+    <title>SHASHLIK.UZ - Меню</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-inner">
+                    <div class="logo">
+                        <span class="logo-icon">🍖</span>
+                        <div class="logo-text">
+                            <h1>SHASHLIK.UZ</h1>
+                            <span class="logo-subtitle">Premium Grill & BBQ</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="ru">RU</button>
+                        <button class="lang-btn" data-lang="uz">UZ</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category Navigation -->
+        <nav class="category-nav">
+            <div class="container">
+                <div class="category-list" id="categoryList">
+                    <!-- Will be populated by JS -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div id="menuContent">
+                <!-- Will be populated by JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Floating Button -->
+    <button class="cart-float-btn" id="cartFloatBtn">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count-badge" id="cartCountBadge">0</span>
+    </button>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal-overlay" id="cartModalOverlay">
+        <div class="cart-modal">
+            <div class="cart-modal-header">
+                <h2 class="cart-modal-title">Корзина</h2>
+                <button class="cart-modal-close" id="cartModalClose">&times;</button>
+            </div>
+            <div class="cart-modal-body" id="cartModalBody">
+                <!-- Cart items will be rendered here -->
+            </div>
+            <div class="cart-modal-footer">
+                <div class="cart-total">
+                    <span>Итого:</span>
+                    <span class="cart-total-amount" id="cartTotalAmount">0 сум</span>
+                </div>
+                <div class="cart-service-note">
+                    * Процент за обслуживание не включён
+                </div>
+                <button class="cart-clear-btn" id="cartClearBtn">Очистить корзину</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">SHASHLIK.UZ</div>
+                <div class="footer-info">
+                    <span>📍 Ташкент, Узбекистан</span>
+                    <span>📞 (66) 232 00 00</span>
+                    <span>🕐 10:00 - 23:00</span>
+                </div>
+                <div class="footer-copyright">
+                    © 2024 SHASHLIK.UZ
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js.js"></script>
+</body>
+</html>
