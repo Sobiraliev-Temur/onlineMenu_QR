@@ -342,6 +342,15 @@ body {
     font-size: 13px;
     color: var(--light-gray);
     margin-bottom: 5px;
+    line-height: 1.45;
+    max-width: 42rem;
+}
+
+.cart-item-description {
+    margin-top: 4px;
+    color: var(--light-gray);
+    font-size: 12px;
+    line-height: 1.4;
 }
 
 .item-weight {
